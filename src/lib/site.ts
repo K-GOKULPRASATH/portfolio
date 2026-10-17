@@ -1,11 +1,11 @@
 export const site = {
-  name: "Gokul Prasath",
+  name: "Gokulprasath K",
   role: "Software Engineer · Educator · Founder",
   headline: "I build software systems, teach problem-solving, and turn ideas into products.",
-  description: "The engineering lab of Gokul Prasath — backend engineering, developer tools, DSA education, and AISDOP.",
+  description: "The engineering lab of Gokulprasath K — backend engineering, developer tools, DSA education, and AISDOP.",
   location: "Tamil Nadu, India",
   github: "https://github.com/K-GOKULPRASATH",
-  email: "hello@example.com",
+  email: "gokulprasath.kalidhass@gmail.com",
   resumePath: "/documents/resume.pdf",
 };
 
