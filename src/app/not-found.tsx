@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { ArrowLeft, Terminal } from "lucide-react";
+export default function NotFound(){return <div className="page-wrap not-found"><Terminal size={34}/><span className="eyebrow">ERROR 404 / ROUTE NOT FOUND</span><h1>This path doesn&apos;t exist.</h1><p>The resource may have moved, or the command may be incorrect.</p><Link className="button button-primary" href="/"><ArrowLeft size={15}/> Return to base</Link></div>;}

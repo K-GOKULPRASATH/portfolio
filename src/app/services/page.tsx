@@ -1,0 +1,14 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, Braces, Code2, GraduationCap, Layers3 } from "lucide-react";
+
+export const metadata: Metadata = { title: "Services", description: "Software development and technical collaboration with Gokul Prasath." };
+const offers = [
+ { icon: Code2, number:"01", title:"Backend & API development", text:"Build or extend backend features, REST APIs, integration workflows, and data-driven application services.", outcomes:["API contract and implementation","Validation and error handling","Setup and technical notes"] },
+ { icon: Layers3, number:"02", title:"Technical prototypes", text:"Turn a focused product requirement into a working prototype with clear boundaries and a practical next-step plan.", outcomes:["Scope and acceptance criteria","Architecture trade-offs","Working demonstration"] },
+ { icon: Braces, number:"03", title:"Developer tools & automation", text:"Explore tools that improve development workflows, validation, orchestration, and repeatable engineering tasks.", outcomes:["Workflow analysis","Small proof of concept","Testing and handover"] },
+ { icon: GraduationCap, number:"04", title:"DSA & technical learning", text:"Create explainable problem walkthroughs, algorithm visualizations, and structured technical learning materials.", outcomes:["Brute force to optimized reasoning","Complexity analysis","Clear Java examples"] }
+];
+export default function ServicesPage() {
+ return <div className="page-wrap inner-page"><div className="eyebrow"><span className="eyebrow-mark">/</span> COLLABORATION / 01</div><section className="service-hero"><h1>Good work starts<br/>with a <span className="text-accent">clear problem.</span></h1><p>Define the outcome, agree on scope, build a useful increment, and make the result easy to hand over.</p><Link href="/contact" className="button button-primary">Discuss a project <ArrowUpRight size={15}/></Link></section><div className="service-grid">{offers.map(offer=><article className="service-card panel" key={offer.number}><div className="service-top"><offer.icon size={23}/><span>{offer.number} / OFFER</span></div><h2>{offer.title}</h2><p>{offer.text}</p><div className="service-outcomes">{offer.outcomes.map(outcome=><div key={outcome}><span>↳</span>{outcome}</div>)}</div><Link href="/contact">Talk about this <ArrowUpRight size={14}/></Link></article>)}</div><div className="note-panel"><span className="status-dot"/><p>Scope, availability, pricing, and dates are agreed per project. This describes potential services, not a guarantee of availability or prior client results.</p></div></div>;
+}

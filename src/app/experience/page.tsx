@@ -1,0 +1,20 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, BookOpen, Code2, Lightbulb, Target } from "lucide-react";
+import { skills, site } from "@/lib/site";
+
+export const metadata: Metadata = { title: "Experience", description: "The engineering, educator, and founder journey of Gokul Prasath." };
+const timeline = [
+  { year: "NOW", title: "Software engineering & placement technical training", type: "ENGINEERING / EDUCATION", text: "Strengthening problem-solving fundamentals while supporting students as they learn algorithms, data structures, and project development." },
+  { year: "BUILD", title: "Developer tools and platform projects", type: "PRODUCT ENGINEERING", text: "Exploring code execution workflows, learning platforms, placement workflows, API boundaries, and maintainable architecture." },
+  { year: "NEXT", title: "Grow as a backend engineer and product builder", type: "DIRECTION", text: "Build deeper expertise in Java, Spring Boot, distributed systems, cloud delivery, testing, and product execution." }
+];
+export default function ExperiencePage() {
+  return <div className="page-wrap inner-page"><div className="eyebrow"><span className="eyebrow-mark">/</span> ENGINEERING JOURNAL / 01</div>
+    <section className="experience-hero"><div><h1>Learn deeply.<br/><span className="text-accent">Build deliberately.</span></h1><p>My path connects software engineering, teaching, and entrepreneurship. I enjoy breaking complex ideas into understandable parts and turning those parts into useful systems.</p><div className="hero-actions"><a className="button button-primary" href={site.resumePath}>Download resume <ArrowUpRight size={15}/></a><Link className="button button-secondary" href="/contact">Get in touch</Link></div></div>
+      <div className="experience-signal panel"><Code2 size={26}/><span className="signal-label">CURRENT FOCUS</span><strong>Backend engineering</strong><p>Java · APIs · Data · Architecture</p><div className="signal-divider"/><BookOpen size={22}/><strong>Teaching problem-solving</strong><p>DSA · Complexity · Reasoning</p></div></section>
+    <section className="section-block"><div className="section-heading"><div><div className="eyebrow">THE JOURNEY / 02</div><h2>Progress over labels.</h2><p>Add exact dates, roles, and verifiable outcomes before publication.</p></div></div><div className="timeline">{timeline.map(item=><div className="timeline-item" key={item.year}><div className="timeline-track"><span>{item.year}</span><i/></div><div className="timeline-card panel"><div className="eyebrow">{item.type}</div><h3>{item.title}</h3><p>{item.text}</p></div></div>)}</div></section>
+    <section className="section-block"><div className="section-heading"><div><div className="eyebrow">OPERATING PRINCIPLES / 03</div><h2>How I approach the work.</h2></div></div><div className="value-grid"><div className="value-card panel"><Target size={22}/><h3>Problem first</h3><p>Clarify what needs to change, who needs it, and how success will be recognized.</p></div><div className="value-card panel"><Lightbulb size={22}/><h3>Reason from basics</h3><p>Use fundamentals, examples, and trade-offs to make technical decisions easier to explain.</p></div><div className="value-card panel"><Code2 size={22}/><h3>Make it verifiable</h3><p>Prefer working demonstrations, repeatable tests, and accurate documentation.</p></div></div></section>
+    <section className="section-block"><div className="section-heading"><div><div className="eyebrow">SKILLS MAP / 04</div><h2>Areas I&apos;m developing.</h2></div></div><div className="skills-grid">{skills.map(skill=><div className="skill-panel panel" key={skill.group}><span className="skill-group">{skill.group}</span><div>{skill.items.map(item=><span className="skill-chip" key={item}>{item}</span>)}</div></div>)}</div></section>
+  </div>;
+}
