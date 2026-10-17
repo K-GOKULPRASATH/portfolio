@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight, CornerDownLeft, Terminal as TerminalIcon } from "lucide-react";
 import { projects, site } from "@/lib/site";
 
@@ -45,6 +46,6 @@ export function TerminalLab() {
       {suggestions.length > 0 && <div className="terminal-suggestions" aria-label="Command suggestions">{suggestions.slice(0,4).map(s => <button key={s} type="button" onClick={() => { setInput(s); inputRef.current?.focus(); }}>{s}</button>)}</div>}
     </div>
     <div className="terminal-footer"><span>UTF-8</span><span>safe command demo</span><span>Try help</span></div>
-    <a className="terminal-hint" href="/projects">Prefer a visual overview? Explore projects <ArrowUpRight size={13}/></a>
+    <Link className="terminal-hint" href="/projects">Prefer a visual overview? Explore projects <ArrowUpRight size={13}/></Link>
   </section>;
 }
